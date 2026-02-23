@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { MessageCircle, Sparkles } from "lucide-react";
+import { Camera, Image as ImageIcon, Award } from "lucide-react";
 
-export default function ContactHero() {
+export default function GalleryHero() {
   return (
     <section style={{
-      minHeight: "55vh",
+      minHeight: "60vh",
       background: "linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)",
       position: "relative",
       overflow: "hidden",
@@ -70,7 +70,7 @@ export default function ContactHero() {
             marginBottom: 24,
           }}
         >
-          <MessageCircle size={14} color="#1a56db" />
+          <Camera size={14} color="#1a56db" />
           <span style={{
             fontSize: 12,
             fontWeight: 700,
@@ -78,7 +78,7 @@ export default function ContactHero() {
             letterSpacing: "0.08em",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}>
-            GET IN TOUCH
+            OUR GALLERY
           </span>
         </motion.div>
 
@@ -97,14 +97,14 @@ export default function ContactHero() {
             color: "#fff",
           }}
         >
-          Let's Start a{" "}
+          Moments That{" "}
           <span style={{
             background: "linear-gradient(135deg, #1a56db, #7c3aed)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
           }}>
-            Conversation
+            Inspire
           </span>
         </motion.h1>
 
@@ -119,12 +119,78 @@ export default function ContactHero() {
             color: "rgba(255,255,255,0.6)",
             marginBottom: 40,
             maxWidth: 680,
-            margin: "0 auto",
+            margin: "0 auto 40px",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}
         >
-          Have questions about our courses? Ready to enroll? Our team is here to help you take the next step in your learning journey.
+          Explore our journey through learning, growth, and success. Every image tells a story of transformation.
         </motion.p>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          style={{
+            display: "flex",
+            gap: 48,
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {[
+            { icon: ImageIcon, value: "500+", label: "Photos" },
+            { icon: Camera, value: "50+", label: "Events" },
+            { icon: Award, value: "2000+", label: "Students" },
+          ].map((stat, i) => {
+            const Icon = stat.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                }}
+              >
+                <div style={{
+                  width: 48,
+                  height: 48,
+                  borderRadius: 12,
+                  background: "rgba(26,86,219,0.15)",
+                  border: "1px solid rgba(26,86,219,0.3)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}>
+                  <Icon size={20} color="#1a56db" strokeWidth={2} />
+                </div>
+                <div style={{ textAlign: "left" }}>
+                  <div style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: 28,
+                    fontWeight: 700,
+                    color: "#fff",
+                    lineHeight: 1,
+                  }}>
+                    {stat.value}
+                  </div>
+                  <div style={{
+                    fontSize: 13,
+                    color: "rgba(255,255,255,0.5)",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}>
+                    {stat.label}
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );

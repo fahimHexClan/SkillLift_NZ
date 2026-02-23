@@ -15,14 +15,14 @@ export default function Footer() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
               <div style={{
-                width: 40, height: 40, borderRadius: 10,
-                background: "linear-gradient(135deg, #1a56db, #0ea5e9)",
+                width: 40, height: 40,
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M3 15L10 4L17 15" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 11H14" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
-                </svg>
+                <img 
+                  src="/images/Logo/skilllift-logo.png" 
+                  alt="SkillLift Logo" 
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
               </div>
               <div>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: 18, color: "#fff" }}>SkillLift</div>

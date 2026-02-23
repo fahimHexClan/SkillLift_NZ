@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock, Users, Star } from "lucide-react";
+import Link from "next/link";
 
 const courses = [
   {
+    id: "korean-language",
     title: "Korean Language Foundation",
     category: "Language & Culture",
     price: "LKR 15,000",
@@ -17,6 +19,7 @@ const courses = [
     tag: "POPULAR",
   },
   {
+    id: "social-media-marketing",
     title: "Social Media Marketing Mastery",
     category: "Digital Marketing",
     price: "LKR 29,000",
@@ -30,6 +33,7 @@ const courses = [
     tag: "FEATURED",
   },
   {
+    id: "graphic-design",
     title: "Certificate in Graphic Design",
     category: "Creative Design",
     price: "LKR 15,000",
@@ -66,31 +70,33 @@ export default function Courses() {
               <em style={{ fontStyle: "italic", color: "#1a56db" }}>Courses</em>
             </h2>
           </div>
-          <button className="btn-outline">View All Programs <ArrowUpRight size={14} /></button>
+          <Link href="/courses" style={{ textDecoration: "none" }}>
+            <button className="btn-outline">View All Programs <ArrowUpRight size={14} /></button>
+          </Link>
         </motion.div>
 
         {/* Cards */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 28 }}>
           {courses.map((c, i) => (
-            <motion.article
-              key={i}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              style={{
-                background: "#fff", borderRadius: 20, overflow: "hidden",
-                border: "1px solid #e2e8f0",
-                boxShadow: "0 4px 20px rgba(10,15,30,0.06)",
-                transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)",
-                cursor: "pointer",
-              }}
-              whileHover={{
-                y: -6,
-                boxShadow: "0 28px 64px rgba(10,15,30,0.14)",
-                borderColor: c.accent,
-              }}
-            >
+            <Link key={c.id} href={`/courses/${c.id}`} style={{ textDecoration: "none", display: "block" }}>
+              <motion.article
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                style={{
+                  background: "#fff", borderRadius: 20, overflow: "hidden",
+                  border: "1px solid #e2e8f0",
+                  boxShadow: "0 4px 20px rgba(10,15,30,0.06)",
+                  transition: "all 0.3s cubic-bezier(0.4,0,0.2,1)",
+                  cursor: "pointer",
+                }}
+                whileHover={{
+                  y: -6,
+                  boxShadow: "0 28px 64px rgba(10,15,30,0.14)",
+                  borderColor: c.accent,
+                }}
+              >
               {/* Thumbnail */}
               <div style={{
                 height: 220, background: c.bg,
@@ -201,6 +207,7 @@ export default function Courses() {
                 </div>
               </div>
             </motion.article>
+            </Link>
           ))}
         </div>
       </div>

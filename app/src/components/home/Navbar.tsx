@@ -63,11 +63,11 @@ const COURSES = [
 ];
 
 const NAV_LINKS = [
-  { label: "Home",        href: "/" },
-  { label: "Courses",     href: "/courses", hasMega: true },
-  { label: "About",       href: "/about" },
-  { label: "Instructors", href: "/about#instructors" },
-  { label: "Contact",     href: "/contact" },
+  { label: "Home",     href: "/" },
+  { label: "Courses",  href: "/courses", hasMega: true },
+  { label: "About",    href: "/about" },
+  { label: "Gallery",  href: "/gallery" },
+  { label: "Contact",  href: "/contact" },
 ];
 
 // ─────────────────────────────────────────────────────────
@@ -81,7 +81,7 @@ export default function Navbar() {
   const [announcementVisible, setAnnouncementVisible] = useState(true);
   const [hoveredCourse, setHoveredCourse] = useState<number | null>(null);
   const megaRef   = useRef<HTMLDivElement>(null);
-const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const closeTimer = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     const fn = () => { setScrolled(window.scrollY > 60); setScrollY(window.scrollY); };
@@ -202,19 +202,20 @@ const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
             {/* ── LOGO ── */}
             <Link href="/" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none", flexShrink: 0 }}>
               <motion.div
-                whileHover={{ scale: 1.06, rotate: 2 }}
+                whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 style={{
                   width: scrolled ? 38 : 42, height: scrolled ? 38 : 42,
-                  borderRadius: 12, flexShrink: 0,
-                  background: "linear-gradient(135deg,#1a56db 0%,#0ea5e9 100%)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  boxShadow: "0 4px 14px rgba(26,86,219,0.38)",
+                  flexShrink: 0,
                   transition: "width 0.35s, height 0.35s",
                 }}
               >
-                <span style={{ fontFamily: "'Playfair Display',serif", fontWeight: 800, fontSize: scrolled ? 13 : 15, color: "#fff", letterSpacing: "-0.03em" }}>SL</span>
+                <img 
+                  src="/images/Logo/skilllift-logo.png" 
+                  alt="SkillLift Logo" 
+                  style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
               </motion.div>
               <div>
                 <div style={{
@@ -540,8 +541,12 @@ const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
               {/* Header */}
               <div style={{ padding: "22px 22px 18px", borderBottom: "1px solid #f1f5f9", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 11 }}>
-                  <div style={{ width: 38, height: 38, borderRadius: 10, background: "linear-gradient(135deg,#1a56db,#0ea5e9)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(26,86,219,0.3)" }}>
-                    <span style={{ fontFamily: "'Playfair Display',serif", fontSize: 14, fontWeight: 800, color: "#fff" }}>SL</span>
+                  <div style={{ width: 38, height: 38, flexShrink: 0 }}>
+                    <img 
+                      src="/images/Logo/skilllift-logo.png" 
+                      alt="SkillLift Logo" 
+                      style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                    />
                   </div>
                   <div>
                     <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 16, fontWeight: 700, color: "#0a0f1e" }}>SkillLift</div>
@@ -558,7 +563,7 @@ const closeTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
                 {[
                   { icon: Home, label: "Home", href: "/" },
                   { icon: Info, label: "About", href: "/about" },
-                  { icon: Users, label: "Instructors", href: "/about#instructors" },
+                  { icon: BookOpen, label: "Gallery", href: "/gallery" },
                   { icon: Phone, label: "Contact", href: "/contact" },
                 ].map(link => {
                   const Icon = link.icon;

@@ -112,25 +112,18 @@ export default function PageLoader({ minDuration = 2000 }: PageLoaderProps) {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               style={{
                 width: 88, height: 88, borderRadius: "50%",
-                background: "linear-gradient(135deg, rgba(26,86,219,0.3), rgba(14,165,233,0.2))",
+                background: "rgba(255,255,255,0.05)",
                 border: "1px solid rgba(255,255,255,0.1)",
                 backdropFilter: "blur(16px)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                boxShadow: "0 0 40px rgba(26,86,219,0.3), inset 0 0 20px rgba(26,86,219,0.1)",
+                boxShadow: "0 0 40px rgba(26,86,219,0.3)",
               }}
             >
-              <div style={{
-                width: 52, height: 52, borderRadius: "50%",
-                background: "linear-gradient(135deg, #1a56db 0%, #0ea5e9 100%)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                boxShadow: "0 8px 24px rgba(26,86,219,0.5)",
-              }}>
-                <span style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontWeight: 800, fontSize: 18, color: "#fff",
-                  letterSpacing: "-0.03em", lineHeight: 1,
-                }}>SL</span>
-              </div>
+              <img 
+                src="/images/Logo/skilllift-logo.png" 
+                alt="SkillLift Logo" 
+                style={{ width: 60, height: 60, objectFit: "contain" }}
+              />
             </motion.div>
 
             <motion.div

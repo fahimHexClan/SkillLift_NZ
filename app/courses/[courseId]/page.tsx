@@ -1,11 +1,12 @@
 import CourseDetailPage from "../../src/components/courses/CourseDetailPage";
 
 interface Props {
-  params: { courseId: string };
+  params: Promise<{ courseId: string }>;
 }
 
-export default function Page({ params }: Props) {
-  return <CourseDetailPage courseId={params.courseId} />;
+export default async function Page({ params }: Props) {
+  const { courseId } = await params;
+  return <CourseDetailPage courseId={courseId} />;
 }
 
 export function generateStaticParams() {
