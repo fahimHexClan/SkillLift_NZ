@@ -16,11 +16,11 @@ export default function Stats({ counts }: StatsProps) {
   const values = { s: counts.s.toLocaleString(), i: counts.i, c: counts.c, co: counts.co };
 
   return (
-    <section style={{ padding: "0 48px 120px", background: "#f8fafc" }}>
+    <section style={{ padding: "0 48px 80px", background: "#f0f7ff" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
         <div style={{
           display: "grid", gridTemplateColumns: "repeat(4,1fr)",
-          background: "#0a0f1e", borderRadius: 20, overflow: "hidden",
+          background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)", borderRadius: 24, overflow: "hidden",
         }}>
           {stats.map((s, i) => (
             <motion.div

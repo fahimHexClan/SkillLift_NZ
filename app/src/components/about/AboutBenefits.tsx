@@ -35,7 +35,7 @@ const benefits = [
 
 export default function AboutBenefits() {
   return (
-    <section style={{ padding: "100px 48px", background: "#f8fafc" }}>
+    <section style={{ padding: "100px 48px", background: "#f0f7ff" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
 
         {/* Header */}

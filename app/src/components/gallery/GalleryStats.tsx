@@ -19,7 +19,7 @@ export default function GalleryStats() {
   return (
     <section style={{
       padding: "100px 48px",
-      background: "#fff",
+      background: "#f0f7ff",
       position: "relative",
       overflow: "hidden",
     }}>

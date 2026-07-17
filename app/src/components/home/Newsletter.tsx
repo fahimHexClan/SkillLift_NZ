@@ -8,14 +8,14 @@ export default function Newsletter() {
   const [subscribed, setSubscribed] = useState(false);
 
   return (
-    <section style={{ padding: "0 48px 120px", background: "#fff" }}>
+    <section style={{ padding: "100px 48px", background: "#f0f7ff" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           style={{
-            background: "linear-gradient(160deg, #060d1c 0%, #0d1b38 100%)",
+            background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
             borderRadius: 24, overflow: "hidden",
             display: "grid", gridTemplateColumns: "1fr 1fr",
             position: "relative",

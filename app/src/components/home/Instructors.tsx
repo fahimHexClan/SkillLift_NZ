@@ -1,384 +1,313 @@
 "use client";
 import { motion } from "framer-motion";
-import { Linkedin, Twitter, Mail, BookOpen, Users, Star, ArrowUpRight, Sparkles } from "lucide-react";
+import { Linkedin, Twitter, Mail, Award, Star } from "lucide-react";
 
 const instructors = [
   {
     name: "Nadeesha Kawishka",
     role: "Lead Technology Instructor",
-    specialty: "Full-Stack Development",
-    courses: 3, students: 620,
-    rating: "4.9",
+    specialty: "Full-Stack Development & Cloud Architecture",
+    courses: 8, 
+    students: 1240,
+    rating: 4.9,
     image: "/images/instructor/1.png",
-    color: "#1a56db",
   },
   {
     name: "Achintha Madusanka",
     role: "Marketing Director",
-    specialty: "Digital & Social Media",
-    courses: 2, students: 480,
-    rating: "4.8",
+    specialty: "Digital Marketing & Social Media Strategy",
+    courses: 6, 
+    students: 980,
+    rating: 4.8,
     image: "/images/instructor/2.png",
-    color: "#0ea5e9",
   },
   {
     name: "Vishan Heleesha",
     role: "Senior Designer",
-    specialty: "Brand & Visual Identity",
-    courses: 2, students: 530,
-    rating: "4.9",
+    specialty: "UI/UX Design & Brand Identity",
+    courses: 5, 
+    students: 850,
+    rating: 4.9,
     image: "/images/instructor/3.png",
-    color: "#7c3aed",
   },
   {
     name: "Sadupa Nayanajith",
     role: "Language Specialist",
-    specialty: "Korean & Linguistics",
-    courses: 2, students: 370,
-    rating: "4.7",
+    specialty: "Korean Language & TOPIK Preparation",
+    courses: 4, 
+    students: 670,
+    rating: 5.0,
     image: "/images/instructor/4.png",
-    color: "#10b981",
   },
 ];
 
 export default function Instructors() {
   return (
     <section style={{ 
-      padding: "120px 48px", 
-      background: "#fff",
-      position: "relative",
-      overflow: "hidden",
+      padding: "100px 48px", 
+      background: "#f0f7ff",
     }}>
-      <div style={{ maxWidth: 1320, margin: "0 auto", position: "relative", zIndex: 1 }}>
+      <div style={{ maxWidth: 1320, margin: "0 auto" }}>
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ textAlign: "center", marginBottom: 80 }}
+          style={{ textAlign: "center", marginBottom: 60 }}
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true }}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "10px 24px",
-              borderRadius: 100,
-              background: "linear-gradient(135deg, #eff6ff, #f5f3ff)",
-              border: "1px solid #e0e7ff",
-              marginBottom: 24,
-            }}
-          >
-            <Sparkles size={16} color="#1a56db" />
+          <div style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            padding: "8px 20px",
+            borderRadius: 100,
+            background: "#ffffff",
+            border: "1px solid #e2e8f0",
+            marginBottom: 20,
+          }}>
+            <Award size={16} color="#2563eb" strokeWidth={2} />
             <span style={{
-              fontSize: 12,
-              fontWeight: 800,
-              background: "linear-gradient(135deg, #1a56db, #7c3aed)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              letterSpacing: "0.1em",
+              fontSize: 13,
+              fontWeight: 600,
+              color: "#2563eb",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}>
-              EXPERT INSTRUCTORS
+              Expert Instructors
             </span>
-          </motion.div>
+          </div>
 
           <h2 style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "clamp(36px, 5vw, 56px)", 
-            fontWeight: 800,
-            color: "#0f172a", 
-            lineHeight: 1.1, 
-            letterSpacing: "-0.03em",
-            marginBottom: 20,
+            fontSize: "clamp(32px, 4vw, 48px)",
+            fontWeight: 700,
+            color: "#0f172a",
+            lineHeight: 1.2,
+            letterSpacing: "-0.02em",
+            marginBottom: 16,
           }}>
-            Meet Your{" "}
-            <span style={{
-              background: "linear-gradient(135deg, #1a56db, #7c3aed)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}>
-              Mentors
-            </span>
+            Meet Our Instructors
           </h2>
 
-          <p style={{ 
-            fontSize: 18, 
-            color: "#64748b", 
-            maxWidth: 680, 
-            margin: "0 auto", 
+          <p style={{
+            fontSize: 17,
+            color: "#64748b",
             lineHeight: 1.7,
+            maxWidth: 640,
+            margin: "0 auto",
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}>
-            Industry professionals dedicated to your success
+            Learn from industry professionals with years of experience and a passion for teaching
           </p>
         </motion.div>
 
-        {/* Grid */}
-        <div style={{ 
-          display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
-          gap: 40 
-        }}>
+        {/* Cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
           {instructors.map((ins, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
+              whileHover={{ y: -8, boxShadow: "0 20px 40px rgba(37,99,235,0.15)" }}
               style={{
-                textAlign: "center",
-                position: "relative",
+                background: "#ffffff",
+                borderRadius: 20,
+                overflow: "hidden",
+                boxShadow: "0 4px 20px rgba(15,23,42,0.08)",
+                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                cursor: "pointer",
               }}
             >
-              {/* Circular Image with Ring */}
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-                style={{
-                  position: "relative",
-                  width: 200,
-                  height: 200,
-                  margin: "0 auto 24px",
-                }}
-              >
-                {/* Animated ring */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              {/* Image Section */}
+              <div style={{ 
+                position: "relative", 
+                height: 300,
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              }}>
+                <img
+                  src={ins.image}
+                  alt={ins.name}
                   style={{
-                    position: "absolute",
-                    inset: -8,
-                    borderRadius: "50%",
-                    background: `conic-gradient(from 0deg, ${ins.color}, transparent, ${ins.color})`,
-                    opacity: 0.3,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
                   }}
                 />
-
-                {/* Image container */}
+                
+                {/* Gradient Overlay */}
                 <div style={{
-                  position: "relative",
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "50%",
-                  overflow: "hidden",
-                  border: "4px solid #fff",
-                  boxShadow: `0 20px 60px ${ins.color}40`,
-                }}>
-                  <img 
-                    src={ins.image} 
-                    alt={ins.name}
-                    style={{ 
-                      width: "100%", 
-                      height: "100%", 
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(180deg, transparent 0%, rgba(15,23,42,0.7) 100%)",
+                }} />
 
-                {/* Rating badge */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 + 0.3, type: "spring" }}
-                  style={{
-                    position: "absolute",
-                    bottom: 0,
-                    right: 0,
-                    width: 56,
-                    height: 56,
-                    borderRadius: "50%",
-                    background: "#fff",
-                    border: `3px solid ${ins.color}`,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-                  }}
-                >
-                  <Star size={16} fill={ins.color} color={ins.color} />
+                {/* Rating Badge */}
+                <div style={{
+                  position: "absolute",
+                  top: 16,
+                  right: 16,
+                  background: "#ffffff",
+                  padding: "8px 16px",
+                  borderRadius: 100,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 6,
+                  boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
+                }}>
+                  <Star size={14} fill="#f59e0b" color="#f59e0b" strokeWidth={0} />
                   <span style={{
-                    fontSize: 13,
-                    fontWeight: 800,
+                    fontSize: 14,
+                    fontWeight: 700,
                     color: "#0f172a",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    marginTop: 2,
                   }}>
                     {ins.rating}
                   </span>
-                </motion.div>
-              </motion.div>
+                </div>
 
-              {/* Name */}
-              <h3 style={{
-                fontFamily: "'Playfair Display', serif",
-                fontSize: 24,
-                fontWeight: 800,
-                color: "#0f172a",
-                marginBottom: 8,
-                lineHeight: 1.2,
-              }}>
-                {ins.name}
-              </h3>
-
-              {/* Role */}
-              <div style={{
-                fontSize: 15,
-                fontWeight: 700,
-                color: ins.color,
-                marginBottom: 4,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}>
-                {ins.role}
-              </div>
-
-              {/* Specialty */}
-              <div style={{
-                fontSize: 13,
-                color: "#94a3b8",
-                marginBottom: 24,
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}>
-                {ins.specialty}
-              </div>
-
-              {/* Stats */}
-              <div style={{
-                display: "flex",
-                justifyContent: "center",
-                gap: 24,
-                marginBottom: 24,
-                padding: "20px",
-                background: "#f8fafc",
-                borderRadius: 16,
-              }}>
-                <div>
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 6,
+                {/* Name & Role Overlay */}
+                <div style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  padding: "20px",
+                }}>
+                  <h3 style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 19,
+                    fontWeight: 700,
+                    color: "#ffffff",
                     marginBottom: 4,
+                    lineHeight: 1.3,
                   }}>
-                    <BookOpen size={16} color={ins.color} />
-                    <span style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: 24,
-                      fontWeight: 800,
-                      color: "#0f172a",
+                    {ins.name}
+                  </h3>
+                  <div style={{
+                    fontSize: 13,
+                    color: "#93c5fd",
+                    fontWeight: 600,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}>
+                    {ins.role}
+                  </div>
+                </div>
+              </div>
+
+              {/* Content Section */}
+              <div style={{ padding: "24px" }}>
+                {/* Specialty */}
+                <p style={{
+                  fontSize: 13,
+                  color: "#64748b",
+                  lineHeight: 1.6,
+                  marginBottom: 24,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  height: 40,
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                  overflow: "hidden",
+                }}>
+                  {ins.specialty}
+                </p>
+
+                {/* Stats */}
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                  marginBottom: 24,
+                  padding: "20px 0",
+                  borderTop: "1px solid #f1f5f9",
+                  borderBottom: "1px solid #f1f5f9",
+                }}>
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{
+                      fontSize: 28,
+                      fontWeight: 700,
+                      color: "#2563eb",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      lineHeight: 1,
+                      marginBottom: 6,
                     }}>
                       {ins.courses}
-                    </span>
+                    </div>
+                    <div style={{
+                      fontSize: 11,
+                      color: "#94a3b8",
+                      fontWeight: 600,
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                    }}>
+                      Courses
+                    </div>
                   </div>
-                  <div style={{
-                    fontSize: 11,
-                    color: "#64748b",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}>
-                    Courses
-                  </div>
-                </div>
 
-                <div style={{
-                  width: 1,
-                  background: "#e2e8f0",
-                }} />
+                  <div style={{ width: 1, height: 40, background: "#e2e8f0" }} />
 
-                <div>
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 6,
-                    marginBottom: 4,
-                  }}>
-                    <Users size={16} color={ins.color} />
-                    <span style={{
-                      fontFamily: "'Playfair Display', serif",
-                      fontSize: 24,
-                      fontWeight: 800,
-                      color: "#0f172a",
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{
+                      fontSize: 28,
+                      fontWeight: 700,
+                      color: "#2563eb",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      lineHeight: 1,
+                      marginBottom: 6,
                     }}>
                       {ins.students}+
-                    </span>
-                  </div>
-                  <div style={{
-                    fontSize: 11,
-                    color: "#64748b",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}>
-                    Students
+                    </div>
+                    <div style={{
+                      fontSize: 11,
+                      color: "#94a3b8",
+                      fontWeight: 600,
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                    }}>
+                      Students
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Social + CTA */}
-              <div style={{
-                display: "flex",
-                gap: 8,
-                justifyContent: "center",
-              }}>
-                {[Linkedin, Twitter, Mail].map((Icon, j) => (
-                  <motion.button 
-                    key={j}
-                    whileHover={{ 
-                      scale: 1.1, 
-                      background: ins.color,
-                      borderColor: ins.color,
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 12,
-                      border: "2px solid #e2e8f0",
-                      background: "#fff",
-                      cursor: "pointer",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      transition: "all 0.3s",
-                      color: "#64748b",
-                    }}
-                  >
-                    <Icon size={18} strokeWidth={2} />
-                  </motion.button>
-                ))}
-                
-                <motion.button
-                  whileHover={{ 
-                    scale: 1.05, 
-                    boxShadow: `0 10px 30px ${ins.color}40` 
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{
-                    flex: 1,
-                    height: 44,
-                    borderRadius: 12,
-                    background: ins.color,
-                    border: "none",
-                    color: "#fff",
-                    cursor: "pointer",
-                    fontSize: 14,
-                    fontWeight: 700,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 6,
-                    boxShadow: `0 4px 16px ${ins.color}30`,
-                  }}
-                >
-                  Profile
-                  <ArrowUpRight size={16} />
-                </motion.button>
+                {/* Social Links */}
+                <div style={{ display: "flex", gap: 8 }}>
+                  {[Linkedin, Twitter, Mail].map((Icon, j) => (
+                    <motion.button
+                      key={j}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{
+                        flex: 1,
+                        height: 44,
+                        borderRadius: 12,
+                        border: "none",
+                        background: "#f8fafc",
+                        cursor: "pointer",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#64748b",
+                        transition: "all 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.background = "#2563eb";
+                        el.style.color = "#fff";
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.background = "#f8fafc";
+                        el.style.color = "#64748b";
+                      }}
+                    >
+                      <Icon size={18} strokeWidth={2} />
+                    </motion.button>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

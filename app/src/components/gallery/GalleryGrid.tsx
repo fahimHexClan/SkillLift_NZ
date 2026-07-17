@@ -23,7 +23,7 @@ export default function GalleryGrid() {
     <>
       <section style={{
         padding: "80px 48px",
-        background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)",
+        background: "#f0f7ff",
       }}>
         <div style={{ maxWidth: 1320, margin: "0 auto" }}>
           {/* Masonry Grid */}

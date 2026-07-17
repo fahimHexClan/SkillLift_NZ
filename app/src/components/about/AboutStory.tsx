@@ -22,7 +22,7 @@ const pillars = [
 
 export default function AboutStory() {
   return (
-    <section style={{ padding: "120px 48px", background: "#fff" }}>
+    <section style={{ padding: "120px 48px", background: "#f0f7ff" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
         <div style={{
           display: "grid", gridTemplateColumns: "1fr 1fr",

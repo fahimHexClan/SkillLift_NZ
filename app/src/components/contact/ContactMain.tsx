@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, CheckCircle, Clock, MessageSquare } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, Clock, MessageSquare, User, AtSign, Hash, Smartphone } from "lucide-react";
 
 const contactInfo = [
   {
@@ -57,23 +57,12 @@ export default function ContactMain() {
     }, 1500);
   };
 
-  const inputStyle = {
-    width: "100%",
-    padding: "14px 18px",
-    borderRadius: 12,
-    border: "1.5px solid #e2e8f0",
-    background: "#fff",
-    fontFamily: "'Plus Jakarta Sans', sans-serif",
-    fontSize: 14,
-    color: "#0f172a",
-    outline: "none",
-    transition: "all 0.3s",
-  };
+  const [focused, setFocused] = useState<string | null>(null);
 
   return (
     <section style={{
       padding: "100px 48px",
-      background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)",
+      background: "#f0f7ff",
     }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
         {/* Contact Info Cards */}
@@ -321,6 +310,7 @@ export default function ContactMain() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
+                {/* Name & Email */}
                 <div style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -332,27 +322,42 @@ export default function ContactMain() {
                       display: "block",
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "#475569",
-                      marginBottom: 8,
+                      color: "#334155",
+                      marginBottom: 10,
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                     }}>
                       Full Name *
                     </label>
-                    <input
-                      style={inputStyle}
-                      placeholder="John Doe"
-                      value={form.name}
-                      onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "#1a56db";
-                        e.target.style.boxShadow = "0 0 0 3px rgba(26,86,219,0.1)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = "#e2e8f0";
-                        e.target.style.boxShadow = "none";
-                      }}
-                      required
-                    />
+                    <div style={{ position: "relative" }}>
+                      <User size={18} color="#64748b" strokeWidth={2} style={{
+                        position: "absolute",
+                        left: 16,
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        pointerEvents: "none",
+                      }} />
+                      <input
+                        placeholder="John Doe"
+                        value={form.name}
+                        onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                        onFocus={() => setFocused("name")}
+                        onBlur={() => setFocused(null)}
+                        required
+                        style={{
+                          width: "100%",
+                          padding: "14px 16px 14px 46px",
+                          borderRadius: 10,
+                          border: focused === "name" ? "1.5px solid #2563eb" : "1.5px solid #cbd5e1",
+                          background: "#ffffff",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          fontSize: 14,
+                          fontWeight: 500,
+                          color: "#1e293b",
+                          outline: "none",
+                          transition: "all 0.2s ease",
+                        }}
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -360,31 +365,47 @@ export default function ContactMain() {
                       display: "block",
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "#475569",
-                      marginBottom: 8,
+                      color: "#334155",
+                      marginBottom: 10,
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                     }}>
                       Email Address *
                     </label>
-                    <input
-                      style={inputStyle}
-                      type="email"
-                      placeholder="john@example.com"
-                      value={form.email}
-                      onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "#1a56db";
-                        e.target.style.boxShadow = "0 0 0 3px rgba(26,86,219,0.1)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = "#e2e8f0";
-                        e.target.style.boxShadow = "none";
-                      }}
-                      required
-                    />
+                    <div style={{ position: "relative" }}>
+                      <Mail size={18} color="#64748b" strokeWidth={2} style={{
+                        position: "absolute",
+                        left: 16,
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        pointerEvents: "none",
+                      }} />
+                      <input
+                        type="email"
+                        placeholder="john@example.com"
+                        value={form.email}
+                        onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                        onFocus={() => setFocused("email")}
+                        onBlur={() => setFocused(null)}
+                        required
+                        style={{
+                          width: "100%",
+                          padding: "14px 16px 14px 46px",
+                          borderRadius: 10,
+                          border: focused === "email" ? "1.5px solid #2563eb" : "1.5px solid #cbd5e1",
+                          background: "#ffffff",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          fontSize: 14,
+                          fontWeight: 500,
+                          color: "#1e293b",
+                          outline: "none",
+                          transition: "all 0.2s ease",
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
 
+                {/* Phone & Subject */}
                 <div style={{
                   display: "grid",
                   gridTemplateColumns: "1fr 1fr",
@@ -396,26 +417,41 @@ export default function ContactMain() {
                       display: "block",
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "#475569",
-                      marginBottom: 8,
+                      color: "#334155",
+                      marginBottom: 10,
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                     }}>
                       Phone Number
                     </label>
-                    <input
-                      style={inputStyle}
-                      placeholder="+94 712 345 678"
-                      value={form.phone}
-                      onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "#1a56db";
-                        e.target.style.boxShadow = "0 0 0 3px rgba(26,86,219,0.1)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = "#e2e8f0";
-                        e.target.style.boxShadow = "none";
-                      }}
-                    />
+                    <div style={{ position: "relative" }}>
+                      <Phone size={18} color="#64748b" strokeWidth={2} style={{
+                        position: "absolute",
+                        left: 16,
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        pointerEvents: "none",
+                      }} />
+                      <input
+                        placeholder="+94 712 345 678"
+                        value={form.phone}
+                        onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                        onFocus={() => setFocused("phone")}
+                        onBlur={() => setFocused(null)}
+                        style={{
+                          width: "100%",
+                          padding: "14px 16px 14px 46px",
+                          borderRadius: 10,
+                          border: focused === "phone" ? "1.5px solid #2563eb" : "1.5px solid #cbd5e1",
+                          background: "#ffffff",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          fontSize: 14,
+                          fontWeight: 500,
+                          color: "#1e293b",
+                          outline: "none",
+                          transition: "all 0.2s ease",
+                        }}
+                      />
+                    </div>
                   </div>
 
                   <div>
@@ -423,87 +459,160 @@ export default function ContactMain() {
                       display: "block",
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "#475569",
-                      marginBottom: 8,
+                      color: "#334155",
+                      marginBottom: 10,
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                     }}>
                       Subject
                     </label>
-                    <input
-                      style={inputStyle}
-                      placeholder="Course Inquiry"
-                      value={form.subject}
-                      onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
-                      onFocus={(e) => {
-                        e.target.style.borderColor = "#1a56db";
-                        e.target.style.boxShadow = "0 0 0 3px rgba(26,86,219,0.1)";
-                      }}
-                      onBlur={(e) => {
-                        e.target.style.borderColor = "#e2e8f0";
-                        e.target.style.boxShadow = "none";
+                    <div style={{ position: "relative" }}>
+                      <MessageSquare size={18} color="#64748b" strokeWidth={2} style={{
+                        position: "absolute",
+                        left: 16,
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        pointerEvents: "none",
+                      }} />
+                      <input
+                        placeholder="Course Inquiry"
+                        value={form.subject}
+                        onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
+                        onFocus={() => setFocused("subject")}
+                        onBlur={() => setFocused(null)}
+                        style={{
+                          width: "100%",
+                          padding: "14px 16px 14px 46px",
+                          borderRadius: 10,
+                          border: focused === "subject" ? "1.5px solid #2563eb" : "1.5px solid #cbd5e1",
+                          background: "#ffffff",
+                          fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          fontSize: 14,
+                          fontWeight: 500,
+                          color: "#1e293b",
+                          outline: "none",
+                          transition: "all 0.2s ease",
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Message Field */}
+                <div style={{ marginBottom: 24 }}>
+                  <label style={{
+                    display: "block",
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: "#334155",
+                    marginBottom: 10,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}>
+                    Message *
+                  </label>
+                  <div style={{ position: "relative" }}>
+                    <MessageSquare size={18} color="#64748b" strokeWidth={2} style={{
+                      position: "absolute",
+                      left: 16,
+                      top: 16,
+                      pointerEvents: "none",
+                    }} />
+                    <textarea
+                      placeholder="Tell us about your inquiry..."
+                      value={form.message}
+                      onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                      onFocus={() => setFocused("message")}
+                      onBlur={() => setFocused(null)}
+                      required
+                      style={{
+                        width: "100%",
+                        padding: "14px 16px 14px 46px",
+                        borderRadius: 10,
+                        border: focused === "message" ? "1.5px solid #2563eb" : "1.5px solid #cbd5e1",
+                        background: "#ffffff",
+                        fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontSize: 14,
+                        fontWeight: 500,
+                        color: "#1e293b",
+                        outline: "none",
+                        transition: "all 0.2s ease",
+                        height: 140,
+                        resize: "none",
                       }}
                     />
                   </div>
                 </div>
 
-                <div style={{ marginBottom: 28 }}>
-                  <label style={{
-                    display: "block",
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "#475569",
-                    marginBottom: 8,
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}>
-                    Message *
-                  </label>
-                  <textarea
-                    style={{ ...inputStyle, height: 140, resize: "none" }}
-                    placeholder="Tell us about your inquiry..."
-                    value={form.message}
-                    onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                    onFocus={(e) => {
-                      e.target.style.borderColor = "#1a56db";
-                      e.target.style.boxShadow = "0 0 0 3px rgba(26,86,219,0.1)";
-                    }}
-                    onBlur={(e) => {
-                      e.target.style.borderColor = "#e2e8f0";
-                      e.target.style.boxShadow = "none";
-                    }}
-                    required
-                  />
-                </div>
-
+                {/* Submit Button */}
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02, boxShadow: "0 10px 30px rgba(26,86,219,0.4)" }}
+                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={loading}
                   style={{
                     width: "100%",
                     padding: "16px",
-                    borderRadius: 12,
-                    background: loading ? "#94a3b8" : "linear-gradient(135deg, #1a56db, #7c3aed)",
-                    color: "#fff",
+                    borderRadius: 10,
+                    background: loading ? "#94a3b8" : "#2563eb",
+                    color: "#ffffff",
                     border: "none",
                     cursor: loading ? "not-allowed" : "pointer",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontSize: 15,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     gap: 10,
-                    boxShadow: "0 4px 16px rgba(26,86,219,0.3)",
+                    boxShadow: loading ? "none" : "0 4px 14px rgba(37,99,235,0.25)",
+                    transition: "all 0.2s ease",
                   }}
                 >
-                  {loading ? "Sending..." : (
+                  {loading ? (
+                    <>
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                        style={{
+                          width: 16,
+                          height: 16,
+                          border: "2px solid #fff",
+                          borderTopColor: "transparent",
+                          borderRadius: "50%",
+                        }}
+                      />
+                      Sending Message...
+                    </>
+                  ) : (
                     <>
                       Send Message
-                      <Send size={16} />
+                      <Send size={18} strokeWidth={2} />
                     </>
                   )}
                 </motion.button>
+
+                {/* Info Text */}
+                <div style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 6,
+                  marginTop: 16,
+                }}>
+                  <div style={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: "50%",
+                    background: "#10b981",
+                  }} />
+                  <p style={{
+                    fontSize: 13,
+                    color: "#64748b",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    margin: 0,
+                  }}>
+                    We typically respond within 24 hours
+                  </p>
+                </div>
               </form>
             )}
           </motion.div>

@@ -18,7 +18,7 @@ export default function GalleryCategories() {
   return (
     <section style={{
       padding: "60px 48px 40px",
-      background: "#fff",
+      background: "#f0f7ff",
       borderBottom: "1px solid #e2e8f0",
     }}>
       <div style={{

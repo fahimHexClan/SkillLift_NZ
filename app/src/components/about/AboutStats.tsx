@@ -10,7 +10,7 @@ const stats = [
 
 export default function AboutStats() {
   return (
-    <section style={{ padding: "0 48px 100px", background: "#fff" }}>
+    <section style={{ padding: "0 48px 100px", background: "#f0f7ff" }}>
       <div style={{ maxWidth: 1320, margin: "0 auto" }}>
 
         {/* Heading */}
