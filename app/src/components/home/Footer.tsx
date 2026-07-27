@@ -1,8 +1,8 @@
 "use client";
 import { MapPin, Phone, Mail, Linkedin, Instagram, Youtube } from "lucide-react";
 
-const usefulLinks = ["Home", "About Us", "Courses", "Instructors", "Contact Us", "Privacy Policy"];
-const resources = ["Student Support", "Video Tutorials", "Terms & Conditions", "FAQ", "Security Policy"];
+const usefulLinks = ["Home", "About Us", "Course", "Contact Us", "Privacy Policy"];
+const resources = ["FAQ", "Terms & Conditions", "Refund Policy", "Risk Disclaimer"];
 
 export default function Footer() {
   return (
@@ -30,8 +30,11 @@ export default function Footer() {
               </div>
             </div>
 
-            <p style={{ fontSize: 13.5, lineHeight: 1.85, color: "rgba(255,255,255,0.35)", maxWidth: 280, marginBottom: 28, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              A globally recognized institution delivering career-focused, practical education across New Zealand and Sri Lanka.
+            <p style={{ fontSize: 13.5, lineHeight: 1.85, color: "rgba(255,255,255,0.35)", maxWidth: 280, marginBottom: 16, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              SkillLift Education delivers practical online courses through live instruction, flexible learning options and personal support for learners in New Zealand, Australia and worldwide.
+            </p>
+            <p style={{ fontSize: 12, lineHeight: 1.7, color: "rgba(255,255,255,0.28)", maxWidth: 280, marginBottom: 28, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              Crypto trading involves risk. SkillLift Education provides education only and does not guarantee profits or trading results.
             </p>
 
             <div style={{ display: "flex", gap: 10 }}>
@@ -90,7 +93,7 @@ export default function Footer() {
                 <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", color: "#0ea5e9", marginBottom: 12, textTransform: "uppercase" }}>Sri Lanka</div>
                 {[
                   { Icon: MapPin, text: "309, Galle Road, Panadura" },
-                  { Icon: Phone, text: "+94 713 680 690" },
+                  { Icon: Phone, text: "+94 71 368 0690" },
                   { Icon: Mail, text: "info@skilllift.lk" },
                 ].map(({ Icon, text }) => (
                   <div key={text} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
@@ -103,8 +106,9 @@ export default function Footer() {
               <div>
                 <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.16em", color: "#0ea5e9", marginBottom: 12, textTransform: "uppercase" }}>New Zealand</div>
                 {[
-                  { Icon: MapPin, text: "Mount Albert, Auckland" },
+                  { Icon: MapPin, text: "Auckland — Online Learning Office" },
                   { Icon: Phone, text: "+64 20 454 8250" },
+                  { Icon: Mail, text: "info@skilllift.co.nz" },
                 ].map(({ Icon, text }) => (
                   <div key={text} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
                     <Icon size={13} color="rgba(255,255,255,0.25)" style={{ marginTop: 1, flexShrink: 0 }} />
@@ -123,10 +127,10 @@ export default function Footer() {
           flexWrap: "wrap", gap: 12,
         }}>
           <p style={{ fontSize: 13, color: "rgba(255,255,255,0.25)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            © 2025 SkillLift Education Ltd. All rights reserved.
+            © 2026 SKILLLIFT EDUCATION LIMITED. All rights reserved. NZBN 9429053078841.
           </p>
           <div style={{ display: "flex", gap: 24 }}>
-            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+            {["Privacy Policy", "Terms & Conditions", "Refund Policy"].map((item) => (
               <a key={item} href="#" style={{
                 fontSize: 12, color: "rgba(255,255,255,0.25)", textDecoration: "none",
                 fontFamily: "'Plus Jakarta Sans', sans-serif", transition: "color 0.2s",

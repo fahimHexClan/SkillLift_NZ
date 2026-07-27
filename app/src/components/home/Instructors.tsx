@@ -5,38 +5,26 @@ import { Linkedin, Twitter, Mail, Award, Star } from "lucide-react";
 const instructors = [
   {
     name: "Nadeesha Kawishka",
-    role: "Lead Technology Instructor",
-    specialty: "Full-Stack Development & Cloud Architecture",
-    courses: 8, 
-    students: 1240,
-    rating: 4.9,
+    role: "Lead Crypto Trading Instructor",
+    specialty: "Crypto market structure, technical analysis and risk management",
     image: "/images/instructor/1.png",
   },
   {
     name: "Achintha Madusanka",
-    role: "Marketing Director",
-    specialty: "Digital Marketing & Social Media Strategy",
-    courses: 6, 
-    students: 980,
-    rating: 4.8,
+    role: "Crypto Market Analyst and Instructor",
+    specialty: "Price action, market analysis and trading psychology",
     image: "/images/instructor/2.png",
   },
   {
     name: "Vishan Heleesha",
-    role: "Senior Designer",
-    specialty: "UI/UX Design & Brand Identity",
-    courses: 5, 
-    students: 850,
-    rating: 4.9,
+    role: "Technical Analysis Coach",
+    specialty: "Charting tools, indicators and trade planning",
     image: "/images/instructor/3.png",
   },
   {
     name: "Sadupa Nayanajith",
-    role: "Language Specialist",
-    specialty: "Korean Language & TOPIK Preparation",
-    courses: 4, 
-    students: 670,
-    rating: 5.0,
+    role: "Learner Support and Trading Coach",
+    specialty: "Beginner onboarding, platform guidance and learner support",
     image: "/images/instructor/4.png",
   },
 ];
@@ -143,30 +131,6 @@ export default function Instructors() {
                   background: "linear-gradient(180deg, transparent 0%, rgba(15,23,42,0.7) 100%)",
                 }} />
 
-                {/* Rating Badge */}
-                <div style={{
-                  position: "absolute",
-                  top: 16,
-                  right: 16,
-                  background: "#ffffff",
-                  padding: "8px 16px",
-                  borderRadius: 100,
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 6,
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.12)",
-                }}>
-                  <Star size={14} fill="#f59e0b" color="#f59e0b" strokeWidth={0} />
-                  <span style={{
-                    fontSize: 14,
-                    fontWeight: 700,
-                    color: "#0f172a",
-                    fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  }}>
-                    {ins.rating}
-                  </span>
-                </div>
-
                 {/* Name & Role Overlay */}
                 <div style={{
                   position: "absolute",
@@ -214,67 +178,8 @@ export default function Instructors() {
                   {ins.specialty}
                 </p>
 
-                {/* Stats */}
-                <div style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                  marginBottom: 24,
-                  padding: "20px 0",
-                  borderTop: "1px solid #f1f5f9",
-                  borderBottom: "1px solid #f1f5f9",
-                }}>
-                  <div style={{ textAlign: "center" }}>
-                    <div style={{
-                      fontSize: 28,
-                      fontWeight: 700,
-                      color: "#2563eb",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      lineHeight: 1,
-                      marginBottom: 6,
-                    }}>
-                      {ins.courses}
-                    </div>
-                    <div style={{
-                      fontSize: 11,
-                      color: "#94a3b8",
-                      fontWeight: 600,
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                    }}>
-                      Courses
-                    </div>
-                  </div>
-
-                  <div style={{ width: 1, height: 40, background: "#e2e8f0" }} />
-
-                  <div style={{ textAlign: "center" }}>
-                    <div style={{
-                      fontSize: 28,
-                      fontWeight: 700,
-                      color: "#2563eb",
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      lineHeight: 1,
-                      marginBottom: 6,
-                    }}>
-                      {ins.students}+
-                    </div>
-                    <div style={{
-                      fontSize: 11,
-                      color: "#94a3b8",
-                      fontWeight: 600,
-                      fontFamily: "'Plus Jakarta Sans', sans-serif",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                    }}>
-                      Students
-                    </div>
-                  </div>
-                </div>
-
                 {/* Social Links */}
-                <div style={{ display: "flex", gap: 8 }}>
+                <div style={{ display: "flex", gap: 8, paddingTop: 20, borderTop: "1px solid #f1f5f9" }}>
                   {[Linkedin, Twitter, Mail].map((Icon, j) => (
                     <motion.button
                       key={j}

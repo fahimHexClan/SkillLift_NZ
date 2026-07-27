@@ -6,10 +6,10 @@ import { Phone, Mail, MapPin, Send, CheckCircle, Clock, MessageSquare, User, AtS
 const contactInfo = [
   {
     icon: Phone,
-    title: "Call Us",
+    title: "Call / WhatsApp Us",
     items: [
-      { label: "Sri Lanka", value: "+94 713 680 690" },
       { label: "New Zealand", value: "+64 20 454 8250" },
+      { label: "Sri Lanka", value: "+94 71 368 0690" },
     ],
     color: "#1a56db",
   },
@@ -17,8 +17,8 @@ const contactInfo = [
     icon: Mail,
     title: "Email Us",
     items: [
-      { label: "General", value: "info@skilllift.lk" },
-      { label: "Support", value: "support@skilllift.lk" },
+      { label: "General", value: "info@skilllift.co.nz" },
+      { label: "Admin", value: "admin@skilllift.co.nz" },
     ],
     color: "#7c3aed",
   },
@@ -26,8 +26,8 @@ const contactInfo = [
     icon: MapPin,
     title: "Visit Us",
     items: [
-      { label: "Address", value: "309, Galle Road" },
-      { label: "City", value: "Panadura, Sri Lanka" },
+      { label: "New Zealand", value: "Auckland (online service)" },
+      { label: "Sri Lanka", value: "309 Galle Road, Panadura" },
     ],
     color: "#0ea5e9",
   },
@@ -35,15 +35,15 @@ const contactInfo = [
     icon: Clock,
     title: "Working Hours",
     items: [
-      { label: "Mon - Fri", value: "9:00 AM - 6:00 PM" },
-      { label: "Saturday", value: "10:00 AM - 4:00 PM" },
+      { label: "Mon - Sat (NZ)", value: "9:00 AM - 7:00 PM" },
+      { label: "Sunday", value: "Closed (bookings by arrangement)" },
     ],
     color: "#10b981",
   },
 ];
 
 export default function ContactMain() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", subject: "", phone: "", country: "", learningOption: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -206,7 +206,7 @@ export default function ContactMain() {
               marginBottom: 32,
               fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}>
-              Fill out the form and our team will get back to you within 24 hours. We're excited to hear from you!
+              Have a question about the course, personal coaching, group classes or enrolment? Send us a message and our team will help you choose the right next step. We usually respond within one business day.
             </p>
 
             {/* Image */}
@@ -282,7 +282,7 @@ export default function ContactMain() {
                   marginBottom: 32,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}>
-                  Thank you for reaching out. Our team will get back to you within 24 hours.
+                  Thank you for contacting SkillLift Education. Your message has been received, and our team will respond within one business day.
                 </p>
 
                 <motion.button
@@ -290,7 +290,7 @@ export default function ContactMain() {
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {
                     setSent(false);
-                    setForm({ name: "", email: "", subject: "", phone: "", message: "" });
+                    setForm({ name: "", email: "", subject: "", phone: "", country: "", learningOption: "", message: "" });
                   }}
                   style={{
                     padding: "14px 32px",
@@ -473,8 +473,7 @@ export default function ContactMain() {
                         transform: "translateY(-50%)",
                         pointerEvents: "none",
                       }} />
-                      <input
-                        placeholder="Course Inquiry"
+                      <select
                         value={form.subject}
                         onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
                         onFocus={() => setFocused("subject")}
@@ -488,12 +487,81 @@ export default function ContactMain() {
                           fontFamily: "'Plus Jakarta Sans', sans-serif",
                           fontSize: 14,
                           fontWeight: 500,
-                          color: "#1e293b",
+                          color: form.subject ? "#1e293b" : "#94a3b8",
                           outline: "none",
                           transition: "all 0.2s ease",
+                          appearance: "none",
                         }}
-                      />
+                      >
+                        <option value="">Select a subject</option>
+                        <option value="Course Inquiry">Course Inquiry</option>
+                        <option value="Personal Coaching">Personal Coaching</option>
+                        <option value="Group Class">Group Class</option>
+                        <option value="Payment and Enrolment">Payment and Enrolment</option>
+                        <option value="Technical Support">Technical Support</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Other">Other</option>
+                      </select>
                     </div>
+                  </div>
+                </div>
+
+                {/* Country & Preferred Learning Option */}
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 20,
+                  marginBottom: 20,
+                }}>
+                  <div>
+                    <label style={{
+                      display: "block", fontSize: 13, fontWeight: 600, color: "#334155",
+                      marginBottom: 10, fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}>
+                      Country
+                    </label>
+                    <input
+                      placeholder="e.g. New Zealand"
+                      value={form.country}
+                      onChange={(e) => setForm((f) => ({ ...f, country: e.target.value }))}
+                      onFocus={() => setFocused("country")}
+                      onBlur={() => setFocused(null)}
+                      style={{
+                        width: "100%", padding: "14px 16px", borderRadius: 10,
+                        border: focused === "country" ? "1.5px solid #2563eb" : "1.5px solid #cbd5e1",
+                        background: "#ffffff", fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontSize: 14, fontWeight: 500, color: "#1e293b", outline: "none",
+                        transition: "all 0.2s ease",
+                      }}
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{
+                      display: "block", fontSize: 13, fontWeight: 600, color: "#334155",
+                      marginBottom: 10, fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}>
+                      Preferred Learning Option
+                    </label>
+                    <select
+                      value={form.learningOption}
+                      onChange={(e) => setForm((f) => ({ ...f, learningOption: e.target.value }))}
+                      onFocus={() => setFocused("learningOption")}
+                      onBlur={() => setFocused(null)}
+                      style={{
+                        width: "100%", padding: "14px 16px", borderRadius: 10,
+                        border: focused === "learningOption" ? "1.5px solid #2563eb" : "1.5px solid #cbd5e1",
+                        background: "#ffffff", fontFamily: "'Plus Jakarta Sans', sans-serif",
+                        fontSize: 14, fontWeight: 500,
+                        color: form.learningOption ? "#1e293b" : "#94a3b8",
+                        outline: "none", transition: "all 0.2s ease", appearance: "none",
+                      }}
+                    >
+                      <option value="">Select an option</option>
+                      <option value="Personal Coaching">Personal Coaching</option>
+                      <option value="Small-Group Class">Small-Group Class</option>
+                      <option value="Not Sure Yet">Not Sure Yet</option>
+                    </select>
                   </div>
                 </div>
 
@@ -540,6 +608,22 @@ export default function ContactMain() {
                       }}
                     />
                   </div>
+                </div>
+
+                {/* Consent Checkbox */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 10, marginBottom: 24 }}>
+                  <input
+                    type="checkbox"
+                    required
+                    id="consent"
+                    style={{ marginTop: 3, width: 16, height: 16, flexShrink: 0, cursor: "pointer" }}
+                  />
+                  <label htmlFor="consent" style={{
+                    fontSize: 12.5, color: "#64748b", lineHeight: 1.55,
+                    fontFamily: "'Plus Jakarta Sans', sans-serif", cursor: "pointer",
+                  }}>
+                    I agree that SkillLift Education may use my details to respond to this enquiry in accordance with the Privacy Policy.
+                  </label>
                 </div>
 
                 {/* Submit Button */}
@@ -610,7 +694,7 @@ export default function ContactMain() {
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                     margin: 0,
                   }}>
-                    We typically respond within 24 hours
+                    We usually respond within one business day
                   </p>
                 </div>
               </form>

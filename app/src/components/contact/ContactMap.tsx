@@ -149,7 +149,7 @@ export default function ContactMap() {
                   </p>
 
                   <motion.a
-                    href="https://maps.google.com"
+                    href="https://www.google.com/maps/search/?api=1&query=309+Galle+Road+Panadura+Sri+Lanka"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
@@ -246,7 +246,7 @@ export default function ContactMap() {
                     color: "#0f172a",
                     marginBottom: 8,
                   }}>
-                    New Zealand Office
+                    New Zealand — Online Learning Office
                   </h3>
 
                   <p style={{
@@ -256,8 +256,8 @@ export default function ContactMap() {
                     marginBottom: 12,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                   }}>
-                    Mount Albert<br />
-                    Auckland, New Zealand
+                    Auckland, New Zealand<br />
+                    Online service only — classes are conducted online
                   </p>
 
                   <motion.a

@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { val: "2,000+", label: "Happy Students", sub: "Across NZ & Sri Lanka" },
-  { val: "15+",    label: "Expert Instructors", sub: "Industry Practitioners" },
-  { val: "7+",     label: "Practical Courses", sub: "Globally Relevant" },
-  { val: "2+",     label: "Countries", sub: "NZ & Sri Lanka" },
+  { val: "4,000+", label: "Total Learners", sub: "Worldwide enrolment" },
+  { val: "8+",      label: "Expert Instructors", sub: "Industry Practitioners" },
+  { val: "5+",      label: "Practical Courses", sub: "Career-focused training" },
+  { val: "2+",      label: "Countries", sub: "NZ, Sri Lanka & worldwide online" },
 ];
 
 export default function AboutStats() {
@@ -26,8 +26,8 @@ export default function AboutStats() {
             color: "#0a0f1e", letterSpacing: "-0.02em",
           }}>
             Trusted by{" "}
-            <em style={{ fontStyle: "italic", color: "#1a56db" }}>Students</em>
-            {" "}Across Sri Lanka
+            <em style={{ fontStyle: "italic", color: "#1a56db" }}>Learners</em>
+            {" "}Worldwide
           </h2>
           {/* Decorative lines */}
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 16, marginTop: 16 }}>

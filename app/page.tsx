@@ -191,7 +191,7 @@ export default function HomePage() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <Stats counts={{ s: 2000, i: 15, c: 7, co: 2 }} />
+          <Stats counts={{ s: 4000, i: 8, c: 5, co: 2 }} />
         </motion.div>
 
         {/* Courses with slide */}

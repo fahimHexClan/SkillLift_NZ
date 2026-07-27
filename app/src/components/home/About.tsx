@@ -5,34 +5,46 @@ import { GraduationCap, Video, Wallet, Infinity, CheckCircle2, TrendingUp, Spark
 const benefits = [
   {
     icon: GraduationCap,
-    title: "Expert Instructors",
-    desc: "Learn from industry-verified trainers with real-world experience across technology, business, and creative fields.",
-    features: ["Industry Certified", "10+ Years Experience", "Real-World Projects"],
+    title: "Experienced Instructors",
+    desc: "Learn through clear explanations, practical examples and guided support from instructors focused on your progress.",
+    features: ["Clear Explanations", "Practical Examples", "Guided Support"],
   },
   {
     icon: Video,
-    title: "Flexible Learning",
-    desc: "Self-paced video tutorials and live sessions you can access anytime, anywhere — built around your schedule.",
-    features: ["24/7 Access", "HD Video Content", "Mobile Friendly"],
+    title: "Flexible Live Classes",
+    desc: "Choose personal coaching or join a scheduled small-group class — whichever fits your routine.",
+    features: ["Personal Coaching", "Small-Group Classes", "Flexible Scheduling"],
   },
   {
-    icon: Wallet,
-    title: "Affordable Fees",
-    desc: "Premium, career-focused training at prices that work for every budget. Quality education for everyone.",
-    features: ["Payment Plans", "No Hidden Fees", "Money-Back Guarantee"],
+    icon: TrendingUp,
+    title: "Practical Learning",
+    desc: "Build skills using chart examples, structured exercises and real market analysis, not just theory.",
+    features: ["Chart Examples", "Structured Exercises", "Market Analysis"],
   },
   {
     icon: Infinity,
-    title: "Lifetime Access",
-    desc: "Unlimited access to all materials, updates, and recordings forever — your investment never expires.",
-    features: ["Forever Access", "Free Updates", "Community Support"],
+    title: "Recorded Learning Resources",
+    desc: "Review key lessons anytime through the LMS and supporting videos between live sessions.",
+    features: ["20 LMS Lessons", "On-Demand Review", "Supporting Videos"],
+  },
+  {
+    icon: CheckCircle2,
+    title: "Personal Mentor Support",
+    desc: "Ask course-related questions and receive guidance throughout the programme from your instructor.",
+    features: ["Direct Access", "Course Guidance", "Ongoing Support"],
+  },
+  {
+    icon: Wallet,
+    title: "Worldwide Online Access",
+    desc: "Learn from New Zealand, Australia or any other location with reliable internet — no campus required.",
+    features: ["100% Online", "Any Time Zone", "Global Access"],
   },
 ];
 
 const stats = [
-  { value: "2,000+", label: "Active Students", icon: TrendingUp, color: "#1a56db" },
-  { value: "98%", label: "Success Rate", icon: CheckCircle2, color: "#10b981" },
-  { value: "15+", label: "Expert Instructors", icon: GraduationCap, color: "#7c3aed" },
+  { value: "4,000+", label: "Total Learners", icon: TrendingUp, color: "#1a56db" },
+  { value: "8+", label: "Expert Instructors", icon: GraduationCap, color: "#7c3aed" },
+  { value: "5+", label: "Practical Courses", icon: CheckCircle2, color: "#10b981" },
 ];
 
 export default function About() {
@@ -187,7 +199,7 @@ export default function About() {
         </div>
 
         {/* Benefits Grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {benefits.map((b, i) => {
             const Icon = b.icon;
             return (

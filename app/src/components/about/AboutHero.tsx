@@ -70,7 +70,8 @@ export default function AboutHero() {
           }}
         >
           SkillLift Education was built on one belief — that practical,
-          career-focused training should be accessible to everyone, everywhere.
+          accessible online learning should be within reach for learners
+          in New Zealand, Australia and worldwide.
         </motion.p>
 
         {/* Pill tags */}
@@ -80,7 +81,7 @@ export default function AboutHero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}
         >
-          {["Founded 2022", "NZ & Sri Lanka", "2,000+ Graduates", "15+ Instructors"].map((t) => (
+          {["Founded 2025", "NZ Registered Company", "4,000+ Learners", "8+ Instructors"].map((t) => (
             <span key={t} style={{
               padding: "8px 18px", borderRadius: 100,
               background: "rgba(255,255,255,0.06)",

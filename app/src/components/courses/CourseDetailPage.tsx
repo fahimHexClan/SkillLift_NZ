@@ -14,116 +14,90 @@ import Footer from "@/components/home/Footer";
 // ── Course data extracted from all screenshots ──────────────────────
 const courseData: Record<string, any> = {
   "crypto-trading": {
-    title: "Crypto Trading Guide",
+    title: "Crypto Trading Guide — Live Online Course",
     category: "Crypto Trading",
-    instructor: "SkillLift Team",
-    updated: "25 November, 2025",
+    instructor: "SkillLift Education",
+    updated: "17 July, 2026",
     rating: "5.00",
     reviews: 21,
-    price: "Rs. 28,000",
-    language: "Sinhala",
-    level: "Advanced",
-    duration: "24 Hours",
+    price: "NZD 499",
+    language: "English & Sinhala",
+    level: "Beginner Friendly",
+    duration: "26 Hours (7 Live Sessions)",
     lessons: 20,
-    students: 5000,
-    videoHours: "100 Hours",
+    students: 4000,
+    videoHours: "20 LMS Lessons",
     img: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&q=80",
     accent: "#1a56db",
     overview: [
-      "A cryptocurrency is a digital currency designed to work as a medium of exchange through a computer network that is not reliant on any central authority, such as a government or bank, to uphold or maintain it. It is a decentralised system for verifying that the parties to a transaction have the money they claim to have, eliminating the need for traditional intermediaries such as banks, when funds are being transferred between two entities.",
-      "Individual ownership records are stored in a ledger, which is a computerised database using strong cryptography to secure transaction records, control the creation of additional coins, and verify the transfer of coin ownership. Despite their name, cryptocurrencies are not considered to be currencies in the traditional sense, and while varying treatments have been applied to them, including classification as commodities, securities, and currencies, cryptocurrencies are generally viewed as a distinct asset class in practise.",
+      "The SkillLift Crypto Trading Guide is designed for beginners and developing traders who want a structured understanding of cryptocurrency markets. You will learn through live online sessions, practical chart examples, guided exercises and a clear focus on risk management.",
+      "This course introduces the key concepts, tools and processes used to analyse cryptocurrency markets. Learners are guided from basic market knowledge to chart reading, technical analysis, trade planning, risk control and trading psychology. The programme focuses on building a repeatable decision-making process rather than promising profits or quick returns.",
     ],
-    overviewSubtitle: "What is Crypto Currency Trading?",
-    overviewSub: "Cryptocurrency trading is the act of speculating on cryptocurrency price movements via a CFD trading account or buying and selling the underlying coins via an exchange. The aspects of Spot & Future will be mainly focused on Trading. The main intention of trading is to develop our equity systematically by managing the risk and profiting accordingly.",
+    overviewSubtitle: "What You Will Be Able to Do",
+    overviewSub: "By the end of the course you will be able to use a reputable exchange and basic wallet security practices, set up and navigate charting tools such as TradingView, identify trends and support/resistance areas, understand selected technical indicators and their limitations, create entry, exit, stop-loss and take-profit plans, apply position sizing and risk-management principles, and develop a written trading plan and a more disciplined decision-making process.",
     content: [
-      "History of money", "Difference between fiat and crypto", "Opportunities of Cryptocurrency",
-      "Blockchain technology", "Crypto mining", "Understanding platforms", "Risk awareness",
-      "Wallet creation", "Binance introduction", "Coin analysis", "On-chain analysis",
-      "Tokenomics", "Long term investing", "TradingView full guide",
-      "Market structure & trend identification", "Support & resistance", "Candlestick patterns",
-      "Chart patterns", "Breakout takeout", "Fibonacci", "Fib retracement",
-      "Fib extension", "Fib based strategies", "Essential indicators & strategies",
-      "Moving averages (MA, EMA)", "RSI, MACD, stochastic RSI, bollinger band(BB)",
-      "Pivot point (PP), super trend, etc.", "Smart money concept (SMC)", "Paper trading",
-      "Live trading", "Trading plan", "Trading psychology", "Spot trading", "Future trading",
+      "Crypto and blockchain fundamentals", "Types of digital assets and market participants",
+      "Exchange setup, account security and wallet basics", "TradingView and chart setup",
+      "Candlesticks and price action", "Market structure, trends, support and resistance",
+      "Volume, moving averages, RSI and MACD", "Entry and exit planning",
+      "Stop-loss, take-profit and position sizing", "Risk management and capital protection",
+      "Trading psychology and discipline", "Building and reviewing a personal trading plan",
+      "Practical chart analysis and guided market examples",
+    ],
+    lmsOutline: [
+      "Introduction to Cryptocurrency Markets", "Blockchain and Digital Assets", "How Crypto Markets Operate",
+      "Exchange Account Setup and Security", "Wallets and Asset Safety", "TradingView Setup",
+      "Candlestick Fundamentals", "Market Structure", "Support and Resistance", "Trendlines and Channels",
+      "Understanding Volume", "Moving Averages", "Relative Strength Index (RSI)",
+      "Moving Average Convergence Divergence (MACD)", "Entry Confirmation",
+      "Stop-Loss and Take-Profit Planning", "Position Sizing and Risk per Trade", "Trading Psychology",
+      "Building a Trading Plan", "Practical Market Review and Next Steps",
     ],
     qualifications: {
       admission: [
-        "The age limit should be between 18 – 45 years. If the student is under 18, require a parental permission letter",
-        "Over 45 years old personnel are able to join with special approval of the ITF department",
-        "Basic computer knowledge, internet knowledge, and basic English knowledge are mandatory",
-        "A computer (laptop, desktop, or tablet) or a smartphone (finance compatible) with an internet connection",
-        "A valid NIC, driving license or passport is a necessity",
-        "Must have a bank account",
+        "No formal qualification or previous trading experience is required",
+        "Recommended age: 18 years or older",
+        "Reliable internet, a computer or laptop, and email access",
+        "Ability to join live online classes at a scheduled time",
       ],
       eligible: [
-        "Those who are interested in the crypto currency & blockchain field",
-        "Those who expect to start an online business",
-        "Those who aspire to earn in dollars",
-        "Part-time income source seekers",
-        "Who envisions beginning a global online business",
+        "Beginners and developing traders",
+        "Working professionals and business owners",
+        "Students aged 18 and over",
+        "Anyone seeking structured crypto market education",
+        "Not suitable for anyone seeking guaranteed income, managed investment services, personalised financial advice, or risk-free trading",
       ],
     },
     fees: {
-      onlineDuration: "20 Sessions +3 Special Modules",
-      offlineDuration: "3 Sessions +3 Special Modules",
-      offlineModules: ["Module 1: SK system", "Module 2: Special revision", "Module 3: Market update"],
       options: [
         {
-          label: "Option 1 — Full Payment",
-          amount: "Rs. 28,000/=",
-          online: "20 Sessions +3 Special Modules",
-          offline: "11 Sessions +3 Special Modules",
-        },
-        {
-          label: "Option 2 — Half Payment",
-          amount: "Rs. 18,000/=",
-          online: "8 Sessions",
-          offline: "5 Sessions",
-        },
-        {
-          label: "Option 2 — Balance Payment",
-          amount: "Rs. 10,000/=",
-          online: "12 Sessions +3 Special Modules",
-          offline: "6 Sessions +3 Special Modules",
+          label: "Standard Course Package — Personal Coaching or Small-Group Class",
+          amount: "NZD 499",
+          online: "7 Live Sessions + 20 LMS Video Lessons",
+          offline: "Personal Coaching or Small-Group",
         },
       ],
-      bankDetails: {
-        account: "SkillLift Education (Pvt) Ltd.",
-        number: "2000773564",
-        bank: "Commercial Bank PLC",
-        branch: "189-Panadura Second Branch",
-      },
       notes: [
-        "Payments made to the personal accounts of the course consultant officers are never approved by the institute and no responsibility is taken in this regard.",
-        "If you pay the entire course fee in cash to our Talawatugoda or Wekada branches, you will get a discount of Rs.1000",
-        "It is mandatory to use a card with OTP access when making card payments.",
-        "If the transaction fails, use another card with OTP access.",
-        "Institution will give you one year of service for this course which valid for one year from the first day of payment for the course.",
-        "Please refer and follow below mentioned process to do payments.",
-        "Click the link to login to your SkillLift profile & for payment process: https://portal.skillfit.lk",
-        "Kindly note that payments are non-refundable (Terms & Conditions)",
+        "Full payment is due at enrolment. A split-payment arrangement may be considered after discussion with the SkillLift team.",
+        "The course fee does not include trading capital, exchange fees or any investment funds.",
+        "Payment instructions are provided securely on the invoice or after the enrolment form is approved — bank details are not published openly.",
+        "For international payments, the payable amount is shown in NZD. Your bank or payment provider may apply currency-conversion or transaction fees.",
+        "Class times for personal coaching are arranged around your availability. Group classes follow the published timetable. International learners have their class time confirmed in their local time zone before enrolment.",
       ],
       howToPay: [
-        "Log to your profile by entering correct user name & password",
-        "Click Pay by Online",
-        "Select Right information",
-        "Buy Course",
-        "Enter Correct Card Details",
-        "Pay",
+        "Complete the online enquiry or enrolment form",
+        "Speak with a SkillLift advisor and confirm your learning option and schedule",
+        "Receive your secure payment instructions",
+        "Complete payment and receive class and LMS access",
       ],
     },
     conditions: {
-      riskNotice: "The Financial Disclaimer Institute is not a financial advisor and does not provide any financial advice. There is a higher degree of risk involved in trading & investing, especially in cryptocurrencies. Past results are not indicative of future returns, and all individuals affiliated with these videos, content, recommendations & courses assume no responsibility for the course follower's trading and investment results.",
+      riskNotice: "Cryptocurrency trading involves significant risk and may result in financial loss. SkillLift Education provides education and general information only. The course does not provide personalised financial advice, managed trading, or any guarantee of profit or trading performance.",
       courseConditions: [
-        "The course is both online & offline engagement",
-        "The institution's services are not your right. SkillLift is not responsible for any loss or damage caused due to services or trading.",
-        "The institution will not accept any responsibility related to the risks and losses incurred in the transactions by you in any way.",
-        "SkillLift will not be responsible for the risks faced by transactions beyond the security measures provided by the institution.",
-        "SkillLift does not act as USDT buyers or sellers in P2P or any other financial non-financial platforms.",
-        "The institution is not responsible for the problems occur to users' finance and other accounts due to the periodic changes (policy changes, rules & regulations, and updates).",
-        "The institution provides for-free revisions & knowledge-sharing sessions for one year after you make the first payment.",
-        "After the full payment, the students are added to the Market opportunity group, news update group, the SkillLift family chat group in Telegram and Facebook closed group.",
+        "This is a private SkillLift Education short-course certificate. It is not an NZQA qualification and should not be represented as one.",
+        "Learners who complete the required course activities will receive a digital Certificate of Completion issued by SkillLift Education.",
+        "Personal coaching capacity is one learner per allocation. Group classes are limited to a maximum of 12 learners to maintain interaction and support.",
+        "Learners are responsible for their own trading decisions and should consider obtaining advice from an appropriately qualified professional where necessary.",
       ],
     },
   },
@@ -341,7 +315,7 @@ export default function CourseDetailPage({ courseId }: Props) {
                 {/* ── QUALIFICATIONS ── */}
                 {activeTab === "Qualifications" && (
                   <div>
-                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, color: "#0a0f1e", marginBottom: 20 }}>Qualifications for Admission</h3>
+                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, color: "#0a0f1e", marginBottom: 20 }}>Admission and Eligibility</h3>
                     <ul style={{ listStyle: "none", marginBottom: 36 }}>
                       {c.qualifications.admission.map((q: string, i: number) => (
                         <li key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", marginBottom: 12 }}>
@@ -350,8 +324,8 @@ export default function CourseDetailPage({ courseId }: Props) {
                         </li>
                       ))}
                     </ul>
-                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#0a0f1e", marginBottom: 16 }}>Who are eligible to enroll as a course follower?</h3>
-                    <ul style={{ listStyle: "none" }}>
+                    <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#0a0f1e", marginBottom: 16 }}>Who Is This Course Suitable For?</h3>
+                    <ul style={{ listStyle: "none", marginBottom: c.lmsOutline ? 36 : 0 }}>
                       {c.qualifications.eligible.map((q: string, i: number) => (
                         <li key={i} style={{ display: "flex", gap: 12, alignItems: "flex-start", marginBottom: 12 }}>
                           <CheckCircle size={16} color="#22c55e" style={{ flexShrink: 0, marginTop: 2 }} />
@@ -359,6 +333,16 @@ export default function CourseDetailPage({ courseId }: Props) {
                         </li>
                       ))}
                     </ul>
+                    {c.lmsOutline && (
+                      <>
+                        <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 700, color: "#0a0f1e", marginBottom: 16 }}>Course Lessons — LMS Outline</h3>
+                        <ol style={{ paddingLeft: 20, margin: 0 }}>
+                          {c.lmsOutline.map((lesson: string, i: number) => (
+                            <li key={i} style={{ fontSize: 14, color: "#475569", lineHeight: 1.9, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{lesson}</li>
+                          ))}
+                        </ol>
+                      </>
+                    )}
                   </div>
                 )}
 
@@ -392,7 +376,7 @@ export default function CourseDetailPage({ courseId }: Props) {
 
                     <h3 style={{ fontFamily: "'Playfair Display', serif", fontSize: 22, fontWeight: 700, color: "#0a0f1e", marginBottom: 8 }}>Course Fees</h3>
                     <p style={{ fontSize: 13.5, color: "#64748b", marginBottom: 24, fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.7 }}>
-                      Course fees includes tuition fee, cost of course materials. Course fees for the Crypto Currency Trading program may be paid upfront or in instalments. Students may choose one of the following two payment options.
+                      Course fees include tuition and access to course materials. Full payment is due at enrolment; a split-payment arrangement may be considered after discussion with the SkillLift team.
                     </p>
 
                     {c.fees.options.map((opt: any, i: number) => (
@@ -405,11 +389,11 @@ export default function CourseDetailPage({ courseId }: Props) {
                           </div>
                           <div style={{ background: "#fff", borderRadius: 10, padding: "12px 16px", border: "1px solid #e2e8f0", textAlign: "center" }}>
                             <div style={{ fontSize: 12, fontWeight: 600, color: "#334155", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{opt.online}</div>
-                            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 3 }}>Online</div>
+                            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 3 }}>Sessions</div>
                           </div>
                           <div style={{ background: "#fff", borderRadius: 10, padding: "12px 16px", border: "1px solid #e2e8f0", textAlign: "center" }}>
                             <div style={{ fontSize: 12, fontWeight: 600, color: "#334155", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>{opt.offline}</div>
-                            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 3 }}>Offline</div>
+                            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 3 }}>Format</div>
                           </div>
                         </div>
                       </div>
@@ -511,11 +495,23 @@ export default function CourseDetailPage({ courseId }: Props) {
               {/* Price + Enroll */}
               <div style={{ padding: "24px 28px 28px" }}>
                 <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 800, color: c.accent, marginBottom: 16 }}>
-                  {c.price}/=
+                  {c.price}
                 </div>
-                <button className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "15px", fontSize: 15 }}>
-                  Enroll Now <ArrowRight size={15} />
-                </button>
+                <Link href="/contact" style={{ textDecoration: "none", display: "block" }}>
+                  <button className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "15px", fontSize: 15 }}>
+                    Enrol Now <ArrowRight size={15} />
+                  </button>
+                </Link>
+                <a href="https://wa.me/64204548250" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "block", marginTop: 10 }}>
+                  <button style={{
+                    width: "100%", justifyContent: "center", padding: "13px", fontSize: 14,
+                    display: "flex", alignItems: "center", gap: 8,
+                    borderRadius: 10, border: "1.5px solid #e2e8f0", background: "#fff",
+                    color: "#0a0f1e", cursor: "pointer", fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700,
+                  }}>
+                    Talk to an Advisor on WhatsApp
+                  </button>
+                </a>
 
                 {/* Share */}
                 <div style={{ marginTop: 20, paddingTop: 20, borderTop: "1px solid #f1f5f9" }}>

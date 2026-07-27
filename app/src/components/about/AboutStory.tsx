@@ -5,18 +5,18 @@ import { ArrowRight, Target, Eye, Globe } from "lucide-react";
 const pillars = [
   {
     icon: Target,
-    title: "Our Success Mission",
-    desc: "To deliver practical, high-quality training that helps every student achieve their personal, academic, and professional goals.",
+    title: "Our Mission",
+    desc: "To deliver practical, high-quality online training that helps learners build real knowledge, confidence and responsible decision-making skills.",
   },
   {
     icon: Eye,
-    title: "Our Learning Vision",
-    desc: "To become Sri Lanka's most trusted platform for skill development, offering modern courses that empower learners to grow and succeed.",
+    title: "Our Vision",
+    desc: "To become a trusted international platform for flexible, practical and personalised skills education.",
   },
   {
     icon: Globe,
     title: "Global Reach",
-    desc: "Operating across New Zealand and Sri Lanka, we bridge borders to bring world-class education to ambitious learners.",
+    desc: "New Zealand-registered with Sri Lanka operations, and online enrolment available to learners worldwide.",
   },
 ];
 
@@ -90,10 +90,10 @@ export default function AboutStory() {
             >
               <div style={{
                 fontFamily: "'Playfair Display', serif",
-                fontSize: 32, fontWeight: 800, color: "#0a0f1e", lineHeight: 1,
-              }}>94%</div>
+                fontSize: 24, fontWeight: 800, color: "#0a0f1e", lineHeight: 1.15,
+              }}>Flexible</div>
               <div style={{ fontSize: 12, color: "#64748b", marginTop: 4, fontWeight: 500, fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                Employment Rate
+                Class Times
               </div>
             </motion.div>
 
@@ -106,7 +106,7 @@ export default function AboutStory() {
             }}>
               <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 6px #22c55e" }} />
               <span style={{ fontSize: 12, fontWeight: 600, color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                Est. 2022
+                Est. 2025
               </span>
             </div>
 
@@ -147,16 +147,20 @@ export default function AboutStory() {
               fontSize: 15, color: "#64748b", lineHeight: 1.82,
               marginBottom: 14, fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}>
-              SkillLift Education delivers practical, career-focused training that builds
-              real skills and confidence. Based in New Zealand with a Sri Lanka branch,
-              we create opportunities through expert guidance.
+              SkillLift Education is a New Zealand-registered online education
+              company focused on practical, accessible and learner-centred
+              training. We connect students with experienced instructors
+              through live online classes, structured learning resources and
+              personal guidance.
             </p>
             <p style={{
               fontSize: 15, color: "#64748b", lineHeight: 1.82,
               marginBottom: 40, fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}>
-              From language programs to digital marketing and design, every course is
-              built around real industry needs — so what you learn, you can immediately use.
+              Our programmes are designed to help learners build useful
+              knowledge and confidence at a pace that fits their lives — combining
+              live instruction, flexible scheduling, learning resources and
+              direct access to guidance.
             </p>
 
             {/* Pillars */}

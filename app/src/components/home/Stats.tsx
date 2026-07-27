@@ -6,10 +6,10 @@ interface StatsProps {
 }
 
 const stats = [
-  { key: "s" as const, suffix: "+", label: "Students Enrolled", sub: "Across NZ & Sri Lanka" },
+  { key: "s" as const, suffix: "+", label: "Total Learners", sub: "Worldwide enrolment" },
   { key: "i" as const, suffix: "+", label: "Expert Instructors", sub: "Industry Practitioners" },
-  { key: "c" as const, suffix: "", label: "Career Programs", sub: "Globally Relevant" },
-  { key: "co" as const, suffix: "", label: "Countries", sub: "NZ & Sri Lanka" },
+  { key: "c" as const, suffix: "+", label: "Practical Courses", sub: "Career-focused training" },
+  { key: "co" as const, suffix: "+", label: "Countries", sub: "NZ, Sri Lanka & worldwide online access" },
 ];
 
 export default function Stats({ counts }: StatsProps) {

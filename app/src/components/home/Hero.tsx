@@ -55,7 +55,7 @@ export default function Hero() {
             >
               <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#1a56db", boxShadow: "0 0 8px #1a56db" }} />
               <span style={{ fontSize: 12, fontWeight: 700, color: "#93bbfd", letterSpacing: "0.05em", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                2025 ADMISSIONS OPEN
+                ENROLMENTS OPEN — FLEXIBLE START DATES
               </span>
             </motion.div>
 
@@ -74,17 +74,17 @@ export default function Hero() {
                 color: "#fff",
               }}
             >
-              Transform Your{" "}
+              Learn{" "}
               <span style={{ 
                 background: "linear-gradient(135deg, #1a56db, #7c3aed)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}>
-                Career
+                Crypto Trading
               </span>
               <br />
-              With Expert Training
+              with Personal Guidance
             </motion.h1>
 
             {/* Description */}
@@ -101,7 +101,7 @@ export default function Hero() {
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
-              Master in-demand skills with industry-verified courses. From crypto trading to graphic design — learn from the best, on your schedule.
+              Build practical trading knowledge through live online sessions, flexible scheduling, real-market examples and step-by-step mentor support. Join from New Zealand, Australia or anywhere in the world.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -125,29 +125,30 @@ export default function Hero() {
                     boxShadow: "0 8px 24px rgba(26,86,219,0.3)",
                   }}
                 >
-                  Explore Courses
+                  View Course
                   <ArrowRight size={18} />
                 </motion.button>
               </Link>
 
-              <motion.button
-                whileHover={{ borderColor: "rgba(255,255,255,0.3)" }}
-                onClick={() => setShowVideo(true)}
-                style={{
-                  display: "flex", alignItems: "center", gap: 10,
-                  padding: "16px 28px", borderRadius: 12,
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1.5px solid rgba(255,255,255,0.1)",
-                  color: "#fff", cursor: "pointer",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontSize: 16, fontWeight: 600,
-                  backdropFilter: "blur(10px)",
-                  transition: "all 0.3s",
-                }}
-              >
-                <Play size={16} fill="#fff" />
-                Watch Demo
-              </motion.button>
+              <a href="https://wa.me/64204548250" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none" }}>
+                <motion.button
+                  whileHover={{ borderColor: "rgba(255,255,255,0.3)" }}
+                  style={{
+                    display: "flex", alignItems: "center", gap: 10,
+                    padding: "16px 28px", borderRadius: 12,
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1.5px solid rgba(255,255,255,0.1)",
+                    color: "#fff", cursor: "pointer",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 16, fontWeight: 600,
+                    backdropFilter: "blur(10px)",
+                    transition: "all 0.3s",
+                  }}
+                >
+                  <Play size={16} fill="#fff" />
+                  Talk to an Advisor
+                </motion.button>
+              </a>
             </motion.div>
 
             {/* Stats */}
@@ -173,18 +174,16 @@ export default function Hero() {
                   ))}
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>2,000+ Students</div>
-                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Across 2 countries</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>4,000+ Learners</div>
+                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>New Zealand, Australia & worldwide</div>
                 </div>
               </div>
 
               <div style={{ width: 1, height: 40, background: "rgba(255,255,255,0.1)" }} />
 
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <div style={{ display: "flex", gap: 2 }}>
-                  {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#fbbf24" color="#fbbf24" />)}
-                </div>
-                <span style={{ fontSize: 14, fontWeight: 700, color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>4.9/5</span>
+                <Award size={16} color="#fbbf24" />
+                <span style={{ fontSize: 14, fontWeight: 700, color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Certificate of Completion</span>
               </div>
             </motion.div>
           </motion.div>
@@ -231,7 +230,7 @@ export default function Hero() {
                   <Users size={20} color="#1a56db" />
                 </div>
                 <div>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: "#fff", fontFamily: "'Playfair Display', serif" }}>15+</div>
+                  <div style={{ fontSize: 20, fontWeight: 800, color: "#fff", fontFamily: "'Playfair Display', serif" }}>8+</div>
                   <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Expert Instructors</div>
                 </div>
               </div>
@@ -312,7 +311,7 @@ export default function Hero() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+                src="https://www.youtube.com/@SkillLift_Education?autoplay=1"
                 title="SkillLift Demo"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

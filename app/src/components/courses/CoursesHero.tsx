@@ -51,7 +51,7 @@ export default function CoursesHero() {
           style={{ fontSize: 17, color: "rgba(255,255,255,0.48)", maxWidth: 480, margin: "0 auto",
             fontFamily: "'Plus Jakarta Sans', sans-serif", lineHeight: 1.75 }}
         >
-          Practical, career-focused programs designed for real-world success — in Sri Lanka and beyond.
+          Practical, career-focused programmes designed for real-world success — in New Zealand, Australia and worldwide.
         </motion.p>
       </div>
     </section>
